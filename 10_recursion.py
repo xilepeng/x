@@ -1,3 +1,23 @@
+def fib(n):
+    """假定n是正整数
+    返回第n个斐波那契数"""
+    if n == 0 or n == 1:
+        return 1
+    return fib(n-1)+ fib(n-2)
+
+# print(fib(10))
+
+# def testFib(n):
+#     for i in range(n+1):
+#         print('fib of',i,'=', fib(i))
+
+# testFib(10)
+
+
+
+
+
+
 def fact(n):
     if n == 0:
         return 1
@@ -39,31 +59,7 @@ def print_num_use_stack(n):
     while not s.is_empty():
         print(s.pop())
 
-print_num_use_stack(10)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# print_num_use_stack(10)
 
 
 
