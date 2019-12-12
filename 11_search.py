@@ -2,7 +2,7 @@
 # 二分查找
 def binary_search(sorted_array, target):
     begin, end = 0, len(sorted_array)-1
-    mid = (begin + end) // 2
+    mid = begin + (end - begin) // 2
     while begin <= end:
         if sorted_array[mid] == target:
             return target
