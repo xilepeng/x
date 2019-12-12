@@ -65,12 +65,13 @@ def insertion_sort(seq):
     n = len(seq)
     print(seq)
     for i in range(1, n):
-        value = seq[i]
+        value = seq[i]# 保存当前元素的值，因为转移过程他的位置可能被覆盖
         pos = i
-        while pos >0 and value < seq[pos -1]:
-            seq[pos] = seq[pos -1]
+        #找到这个值合适的位置，使得前面[0,i]有序
+        while pos >0 and seq[pos -1] > value:#前面的元素比value大
+            seq[pos] = seq[pos -1] #value一直前移
             pos -= 1
-        seq[pos] = value
+        seq[pos] = value #找到了合适的位置赋值
         print(seq)
 
 def test_insertion_sort():
@@ -83,7 +84,17 @@ def test_insertion_sort():
 
 test_insertion_sort()
 
-
+# 插入排序
+# [6, 1, 2, 5, 0, 3, 7, 4, 9, 8]
+# [1, 6, 2, 5, 0, 3, 7, 4, 9, 8]
+# [1, 2, 6, 5, 0, 3, 7, 4, 9, 8]
+# [1, 2, 5, 6, 0, 3, 7, 4, 9, 8]
+# [0, 1, 2, 5, 6, 3, 7, 4, 9, 8]
+# [0, 1, 2, 3, 5, 6, 7, 4, 9, 8]
+# [0, 1, 2, 3, 5, 6, 7, 4, 9, 8]
+# [0, 1, 2, 3, 4, 5, 6, 7, 9, 8]
+# [0, 1, 2, 3, 4, 5, 6, 7, 9, 8]
+# [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
 
