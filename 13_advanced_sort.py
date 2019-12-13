@@ -54,6 +54,9 @@ def test_quick_sort():
     assert quick_sort(a) == sorted(a)
 
 
+
+
+
 def partition(array, begin, end):
     pivot_index = begin
     pivot = array[pivot_index]
@@ -89,8 +92,52 @@ def test_quick_sort_inplace():
     seq = list(range(10))
     random.shuffle(seq)
     print(seq)
+    sorted_seq = sorted(seq)
     quick_sort_inplace(seq, 0, len(seq))
+    assert seq == sorted_seq
     print(seq)
+
+
+
+def nth_element(array, begin, end, nth):
+    """查找一个数组第n大元素"""
+    if begin < end:
+        pivot_idx = partition(array, begin, end)
+        if pivot_idx == nth - 1:
+            return array[pivot_idx]
+        elif pivot_idx > nth - 1:
+            return nth_element(array, begin, pivot_idx, nth)
+        else:
+            return nth_element(array, pivot_idx + 1, end, nth)
+
+
+
+def test_nth_element():
+    l1 = [3, 5, 4, 2, 1]
+    assert nth_element(l1, 0, len(l1), 3) == 3
+    assert nth_element(l1, 0, len(l1), 2) == 2
+
+    l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    for i in l:
+        assert nth_element(l, 0, len(l), i) == i
+    for i in reversed(l):
+        assert nth_element(l, 0, len(l), i) == i
+
+    array = [3, 2, 1, 5, 6, 4]
+    assert nth_element(array, 0, len(array), 2) == 2
+
+    array = [2,1]
+    assert nth_element(array, 0, len(array), 1) == 1
+    assert nth_element(array, 0, len(array), 2) == 2
+
+    array = [3,3,3,3,3,3,3,3,3]
+    assert nth_element(array, 0, len(array), 1) == 3
+
+
+if __name__ == '__main__':
+    test_nth_element()
+
+
 
 
 
