@@ -2,5 +2,6 @@
   "13_advanced_sort.py::test_merge_sort",
   "13_advanced_sort.py::test_quick_sort",
   "13_advanced_sort.py::test_partition",
-  "13_advanced_sort.py::test_quick_sort_inplace"
+  "13_advanced_sort.py::test_quick_sort_inplace",
+  "13_advanced_sort.py::test_nth_element"
 ]
