@@ -14,5 +14,9 @@
         "-p",
         "*test.py"
     ],
+    "pythonTestExplorer.testFramework": "pytest",
+    "python.testing.nosetestArgs": [
+        "__pycache__"
+    ],
     "python.testing.promptToConfigure": false
 }

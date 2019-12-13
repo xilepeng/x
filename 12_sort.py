@@ -29,6 +29,7 @@ test_bubble_sort()
 # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
+
 def select_sort(seq):
     """选择排序：每一轮最小的元素放到合适的位置"""
     n = len(seq)
