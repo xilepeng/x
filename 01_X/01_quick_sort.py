@@ -22,19 +22,19 @@ def quick_sort(array):
 
 
 def partition(array, begin, end):
-    piviot_index = begin
-    piviot = array[piviot_index]
+    pivot_index = begin
+    pivot = array[pivot_index]
     left, right = begin + 1, len(array) - 1
     while True:
-        while left <= right and array[left] <= piviot:
+        while left <= right and array[left] <= pivot:
             left += 1
-        while left <= right and array[right] >= piviot:
+        while left <= right and array[right] >= pivot:
             right -= 1
         if left > right:
             break
         else:
             array[left], array[right] = array[right], array[left]
-    array[piviot_index], array[right] = array[right], array[piviot_index]
+    array[pivot_index], array[right] = array[right], array[pivot_index]
     return right
 
 def quicksort_inplace(array, begin, end):
