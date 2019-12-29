@@ -1,23 +1,53 @@
 
-# 二分查找
-def binary_search(sorted_array, target):
-    begin, end = 0, len(sorted_array)-1
-    mid = begin + (end - begin) // 2
+
+def binary_search(nums, target):
+    """二分查找"""
+    begin, end = 0, len(nums) - 1
     while begin <= end:
-        if sorted_array[mid] == target:
-            return target
-        if sorted_array[mid] < target:
+        mid = begin + (end - begin)// 2
+        if target == nums[mid]:
+            return mid
+        elif target > nums[mid]:
             begin = mid + 1
         else:
             end = mid - 1
     return -1
 
 
-def test_binary_search():
-    a = list(range(10))
-    assert binary_search(a, 1) == 1
+def binary_search_rec(nums, target):
+    """二分查找,递归"""
+    begin, end = 0, len(nums) - 1
+    while begin <= end:
+        mid = begin + (end - begin)// 2
+        if target == nums[mid]:
+            return mid
+        elif target > nums[mid]:
+            binary_search_rec(nums[mid+1:],target)
+        else:
+            binary_search_rec(nums[:mid-1],target)
+    return -1
 
-            
+
+
+# def binary_search(sorted_array, target):
+#     begin, end = 0, len(sorted_array)-1
+#     mid = begin + (end - begin) // 2
+#     while begin <= end:
+#         if sorted_array[mid] == target:
+#             return target
+#         if sorted_array[mid] < target:
+#             begin = mid + 1
+#         else:
+#             end = mid - 1
+#     return -1
+
+
+def test_binary_search():
+    a = list(range(1,10))
+    assert binary_search(a, 1) == 1
+    assert binary_search_rec(a, 2) == 2
+
+test_binary_search()           
 
 number_list = [0, 1, 2, 3, 4, 5, 6, 7]
 

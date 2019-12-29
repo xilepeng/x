@@ -45,3 +45,4 @@ def bin_search_rec(nums, target, low, high):
 def test_bin_search_rec():
     nums = [1, 4, 5, 8, 9]
     assert bin_search_rec(nums,5, 0, len(nums)-1) == 2
+
