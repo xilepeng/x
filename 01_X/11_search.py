@@ -3,7 +3,7 @@
 def binary_search(nums, target):
     """二分查找"""
     begin, end = 0, len(nums) - 1
-    while begin <= end:
+    while begin <= end: #相交退出循环
         mid = begin + (end - begin)// 2
         if target == nums[mid]:
             return mid
