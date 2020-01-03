@@ -2,7 +2,11 @@
     "python.pythonPath": "/Users/mojo/anaconda3/bin/python",
     "editor.renderWhitespace": "all",
     "python.testing.pytestArgs": [
+<<<<<<< HEAD
         "Algorithm"
+=======
+        "__pycache__"
+>>>>>>> master
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.nosetestsEnabled": false,
